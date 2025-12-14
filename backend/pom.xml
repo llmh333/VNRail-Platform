@@ -28,6 +28,7 @@
 
 
     <modules>
+        <module>application/vnrail-api</module>
     </modules>
 
     <dependencies>
