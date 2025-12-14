@@ -10,15 +10,14 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>vnrail-api</artifactId>
-    <name>vnrail-api</name>
-    <description>Application Runner Module</description>
+    <artifactId>feature-user</artifactId>
+    <name>feature-user</name>
+    <description>Module User - Library</description>
 
     <dependencies>
         <dependency>
-            <groupId>org.vnrail</groupId>
-            <artifactId>feature-user</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
         <dependency>
@@ -27,14 +26,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -42,16 +35,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
