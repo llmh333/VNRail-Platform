@@ -13,30 +13,85 @@
     <groupId>org.vnrail</groupId>
     <artifactId>backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <description>VNRAIL Platform Backend - Root Project</description>
 
     <packaging>pom</packaging>
 
     <name>backend</name>
-    <description>VNRAIL Platform Backend - Multi-module Project</description>
 
     <properties>
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <vnrail.version>0.0.1-SNAPSHOT</vnrail.version>
     </properties>
 
 
     <modules>
+        <module>vnrail-core-libs</module>
+        <module>vnrail-app</module>
+        <module>vnrail-service</module>
     </modules>
 
     <dependencies>
     </dependencies>
 
     <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.vnrail</groupId>
+                <artifactId>common-starter</artifactId>
+                <version>${vnrail.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.vnrail</groupId>
+                <artifactId>jpa-starter</artifactId>
+                <version>${vnrail.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.vnrail</groupId>
+                <artifactId>security-starter</artifactId>
+                <version>${vnrail.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.vnrail</groupId>
+                <artifactId>web-starter</artifactId>
+                <version>${vnrail.version}</version>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version> </path>
+                            <path>
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>1.5.5.Final</version>
+                            </path>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok-mapstruct-binding</artifactId>
+                                <version>0.2.0</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 </project>
